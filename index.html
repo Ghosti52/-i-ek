@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Fidan</title>
+
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #eaf7ea;
+  font-family: Arial;
+}
+
+#bitki {
+  width: 40px;
+  height: 80px;
+  background: green;
+  border-radius: 20px 20px 5px 5px;
+  transition: all 2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.buyuk {
+  width: 60px;
+  height: 150px;
+  background: darkgreen;
+}
+
+.cicek::after {
+  content: "🌸";
+  font-size: 50px;
+  position: absolute;
+  top: -45px;
+  left: -5px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="bitki"></div>
+
+<script>
+let asama = 0;
+const bitki = document.getElementById("bitki");
+
+bitki.onclick = () => {
+  if (asama === 0) {
+    bitki.classList.add("buyuk");
+    asama++;
+  } 
+  else if (asama === 1) {
+    bitki.classList.add("cicek");
+    asama++;
+  }
+};
+</script>
+
+</body>
+</html>
